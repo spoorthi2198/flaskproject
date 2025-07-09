@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Movie Recommender</title></head>
+<body>
+    <h2>Movie Recommender</h2>
+    <form method="POST">
+        <label>Enter Genre (e.g. Action, Romance, Sci-Fi):</label>
+        <input type="text" name="genre" required>
+        <input type="submit" value="Get Recommendations">
+    </form>
+
+    {% if movies %}
+        <h3>Recommended {{ genre.capitalize() }} Movies:</h3>
+        <ul>
+            {% for movie in movies %}
+                <li>{{ movie }}</li>
+            {% endfor %}
+        </ul>
+    {% elif genre %}
+        <p>No movies found in '{{ genre }}' genre.</p>
+    {% endif %}
+</body>
+</html>

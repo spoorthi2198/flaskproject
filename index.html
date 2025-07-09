@@ -1,0 +1,15 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scraped Books</title>
+</head>
+<body>
+    <h1>Scraped Book Titles:</h1>
+    <ul>
+        {% for title in titles %}
+            <li>{{ title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

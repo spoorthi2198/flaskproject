@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Search</title>
+</head>
+<body>
+    <h2>YouTube Video Search</h2>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Search videos" required>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if videos %}
+        <h3>Search Results:</h3>
+        <ul>
+            {% for video in videos %}
+                <li>
+                    <img src="{{ video.thumbnail }}" width="200"><br>
+                    <b>{{ video.title }}</b><br>
+                    Channel: {{ video.channel }}<br>
+                    <a href="https://www.youtube.com/watch?v={{ video.videoId }}" target="_blank">Watch</a>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
